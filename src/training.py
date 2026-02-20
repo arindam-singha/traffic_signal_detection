@@ -11,8 +11,9 @@ Original file is located at
 
 !pip install roboflow
 
-from roboflow import Roboflow
-rf = Roboflow(api_key="38Bb4xtLGTD5P5vdhm6M")
+load_dotenv()  # Load environment variables from .env filefrom roboflow import Roboflow
+
+rf = Roboflow(api_key=os.getenv("ROBOFLOW_API_KEY"))
 workspace = rf.workspace()
 print(workspace)
 
@@ -22,6 +23,7 @@ dataset = project.version(1).download("yolov8")
 import os
 import cv2
 import matplotlib.pyplot as plt
+from dotenv import load_dotenv
 
 # Define the path to the dataset images
 image_path = os.path.join(dataset.location, 'train', 'images')

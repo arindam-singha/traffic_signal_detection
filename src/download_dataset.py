@@ -10,7 +10,11 @@ Original file is located at
 !pip install Roboflow
 
 from roboflow import Roboflow
-rf = Roboflow(api_key="38Bb4xtLGTD5P5vdhm6M")
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
+rf = Roboflow(aapi_key=os.getenv("ROBOFLOW_API_KEY")
 workspace = rf.workspace()
 print(workspace)
 
