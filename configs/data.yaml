@@ -1,0 +1,14 @@
+# YOLO Traffic Signal Detection Dataset Configuration
+# Path to the dataset
+path: ../data  # dataset root directory
+
+# Train/val/test split
+train: images/train
+val: images/val
+test: images/test
+
+# Number of classes
+nc: 3
+
+# Class names
+names: ['Red', 'Green', 'Yellow']
